@@ -1,0 +1,104 @@
+*{box-sizing: border-box;
+margin: 0;
+/* background-image: url('./img/bamboo.png'); */
+background-repeat: round;
+}
+
+h1{
+    color: goldenrod;
+}
+#nav{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    padding: 5px;
+    background-color: maroon;
+    border: 0.5px solid goldenrod;
+    z-index: 1;
+    height: 10vh;
+}
+#nav a{
+    color: white;
+    margin-top: 20px;
+    font-size: larger;
+
+}
+#nav li {
+    padding-left: 15px;
+    margin-top: 5px;
+}
+#nav h1 {
+    justify-content: left;
+    text-align: left;
+}
+#crest{
+    align-content: flex-start;
+    margin-top: 0;
+    height: 10vh;
+    width: 10vw;
+}
+#navbar{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+    background-color: #858585;
+}
+.signUp{
+    justify-content: center;
+    height: 50vh;
+    width: 40vw;
+    margin-left: 31vw;
+    margin-top: 20vh;
+    justify-items: center;
+    align-items: center;
+    border: 0.5px solid goldenrod;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    background-color: maroon;
+    color: white;
+}
+button{
+    margin-top: 10vh;
+    border-radius: 10px;
+    border: 1px solid goldenrod;
+    color: white;
+    background-color: maroon;
+}
+input{
+    margin-top: 3vh;
+    border-radius: 5px;
+    border: 1px solid goldenrod;
+    color: white;
+    background-color: maroon;
+}
+.signUp form {
+    padding-top: 40px;
+}
+
+#wrapper{
+    background-color: thistle;
+}
+.characters li{
+    margin-top: 3px;
+    list-style: none;
+    text-transform: capitalize;
+    
+}
+.contentContainer{
+ justify-content: center;
+    height: 70vh;
+    width: 40vw;
+    margin-left: 31vw;
+    margin-top: 10vh;
+    justify-items: center;
+    align-items: center;
+    border: 0.5px solid goldenrod;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    background-color: maroon;
+    color: white;
+}

@@ -1,0 +1,20 @@
+{{> navBar }}
+
+<div class="contentContainer">
+    <h1>Character Search</h1>
+    <ul class="characters">
+        {{#each data}}
+        <li>{{@key}} : {{this}}</li>
+        {{/each}}
+    </ul>
+    <br>
+    <br>
+    <form action="/characters" method="POST">
+        {{!-- name for "character was incorrect - was characterPlace" --}}
+        <input class="inputSections" type="text" name="character" placeholder="Enter Character Name">
+        <br>
+        <br>
+        <input class="inputButton" type="submit" value="Submit">
+    </form>
+    <h3>{{err}}</h3>
+</div>

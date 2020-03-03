@@ -1,0 +1,20 @@
+{{> navBar}}
+
+<div class="contentContainer">
+    <h1>Prepare to be sorted</h1>
+    {{!-- <h2>I know exactly what to do with you...</h2> --}}
+    <br>
+    <br>
+    <ul>
+        <h3>{{data}}</h3>
+        {{!-- {{#each data}}
+        <li>{{@key}} : {{this}}</li> --}}
+        {{!-- {{/each}} --}}
+    </ul>
+    <br>
+    <br>
+    <form action="/sortingHouse" method="POST">
+        <br>
+        <input class="inputButton" type="submit" value="Sort Me">
+    </form>
+</div>
