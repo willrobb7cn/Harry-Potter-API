@@ -14,6 +14,8 @@ const getHarryPotterData = require('./lib/getHarryPotter')
 const app = express()
 const getUsers = require('./lib/getUsers')
 const getPassword = require('./lib/getPassword')
+// const fs = require('fs');
+// const content = JSON.stringify(output);
 // const routes =require('./routes/router')
 
 const getSession = require('./lib/getSession')
@@ -187,7 +189,12 @@ app.post('/sortingHouse', async (req, res) => {
 
 app.post('/characters', async (req, res) => {
     let characterChosen = encodeURIComponent(req.body.character)
+    let aliasChosen = encodeURIComponent(req.body.character)
+    let aliasData = await getHarryPotterData.aliasData(aliasChosen)
     let data = await getHarryPotterData.harryPotterData(characterChosen);
+    console.log(`this is my ${aliasData}`);
+    console.log(characterChosen);
+    
     let name, role, school, house, alias, wand, bloodStatus, animagus, ministryOfMagic, dumbledoresArmy, deathEater
     if (data[0]) {
         name = data[0].name;
@@ -201,11 +208,29 @@ app.post('/characters', async (req, res) => {
         dumbledoresArmy = data[0].dumbledoresArmy;
         deathEater = data[0].deathEater;
         bloodStatus = data[0].bloodStatus;
+        console.log("yes");
+
+        res.render("characters", { data: { name, role, school, house, wand, alias, bloodStatus, animagus, ministryOfMagic, dumbledoresArmy, deathEater } });
+
+    } else if (aliasData[0]){
+        console.log('Alias')
+        name = aliasData[0].name;
+        role = aliasData[0].role;
+        house = aliasData[0].house;
+        school = aliasData[0].school
+        alias = aliasData[0].alias;
+        animagus = aliasData[0].animagus;
+        wand = aliasData[0].wand;
+        ministryOfMagic = aliasData[0].ministryOfMagic;
+        dumbledoresArmy = aliasData[0].dumbledoresArmy;
+        deathEater = aliasData[0].deathEater;
+        bloodStatus = aliasData[0].bloodStatus;
         // console.log("yes");
 
         res.render("characters", { data: { name, role, school, house, wand, alias, bloodStatus, animagus, ministryOfMagic, dumbledoresArmy, deathEater } });
 
-    } else {
+    }
+    else {
         // console.log("no");
 
         res.render('characters', { err: `${characterChosen} does not exist. Please pick a character` })
@@ -225,5 +250,5 @@ app.post('/characters', async (req, res) => {
 
 
 // always need an app.listen to set the localhost port
-app.listen(3000)
+app.listen(4567)
 
