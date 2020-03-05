@@ -250,5 +250,5 @@ app.post('/characters', async (req, res) => {
 
 
 // always need an app.listen to set the localhost port
-app.listen(4567)
+app.listen(3000)
 
